@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/GabeCordo/mango-example/clusters"
-	"github.com/GabeCordo/mango-go/processor"
-	"github.com/GabeCordo/mango/components/cluster"
+	"github.com/GabeCordo/keitt-common/clusters"
+	"github.com/GabeCordo/keitt/processor"
+	"github.com/GabeCordo/keitt/processor/components/cluster"
 )
 
 func main() {

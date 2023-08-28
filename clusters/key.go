@@ -3,16 +3,16 @@ package clusters
 import (
 	"fmt"
 
-	"github.com/GabeCordo/mango/components/channel"
-	"github.com/GabeCordo/mango/components/cluster"
-	"github.com/GabeCordo/mango/utils"
+	"github.com/GabeCordo/keitt/processor/components/channel"
+	"github.com/GabeCordo/keitt/processor/components/cluster"
+	"github.com/GabeCordo/keitt/processor/components/helper"
 )
 
 type KeyCluster struct {
-	helper utils.Helper
+	helper helper.Helper
 }
 
-func (cluster *KeyCluster) SetHelper(helper utils.Helper) {
+func (cluster *KeyCluster) SetHelper(helper helper.Helper) {
 	cluster.helper = helper
 }
 

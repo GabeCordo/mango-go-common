@@ -1,0 +1,8 @@
+name: common
+debug: True
+standalone-mode: False
+max-wait-for-response: 2.0
+core: "http://localhost:8137"
+net:
+  host: "localhost"
+  port: 5023

@@ -1,9 +1,9 @@
 github.com/GabeCordo/fack v0.1.4 h1:sEFZvPN0e1xBWotTKBTN15CG3sHhxdRiILEX87xfIMs=
 github.com/GabeCordo/fack v0.1.4/go.mod h1:gswPD1Ow2onkjUcNa3WVbnJDJ+hHytS3Bjmdab4fRtk=
-github.com/GabeCordo/keitt v0.0.3 h1:+RwtZDOyM4S/6Ps7c/hPCTdXf65fs0dq44/smoS+CQs=
-github.com/GabeCordo/keitt v0.0.3/go.mod h1:85I3xx3OmYf9Kerxx2oy4FJfQQGlxeFlMBBbIuOpba4=
-github.com/GabeCordo/mango v0.2.0-alpha h1:VNMOfTyT8f4MJN5rHy3ZOAQNXXK23R/RR5+mq9sr/M0=
-github.com/GabeCordo/mango v0.2.0-alpha/go.mod h1:fAlo9ARvw+TRAxqWKQIe8n8sASX0JtWvqnTqJOUEqqE=
+github.com/GabeCordo/keitt v0.0.4 h1:ViR879c9dChI+ITEEKsV/921DeJeZwpXXQS/rhLI36Y=
+github.com/GabeCordo/keitt v0.0.4/go.mod h1:2StlUJYIrc7S6j8AaFYne/B2+AWttYIuhBQY6PVF7QM=
+github.com/GabeCordo/mango v0.2.1-alpha h1:KP6RkdWZ8iQDqplqNdU9mlchufSAKDNnsefVBNxZhuM=
+github.com/GabeCordo/mango v0.2.1-alpha/go.mod h1:fAlo9ARvw+TRAxqWKQIe8n8sASX0JtWvqnTqJOUEqqE=
 github.com/GabeCordo/toolchain v0.1.6 h1:DntZ5RQfQ9zh1VffdDajHjWV7eWe+9oZ+RIHk8d6NT0=
 github.com/GabeCordo/toolchain v0.1.6/go.mod h1:2UmX2lHst0LFC4GyFCprBfBk0XbLo9DAQM6cuXHYh3U=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=

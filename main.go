@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/GabeCordo/keitt-common/clusters"
 	"github.com/GabeCordo/keitt/processor"
 	"github.com/GabeCordo/keitt/processor/components/cluster"
@@ -8,52 +11,28 @@ import (
 
 func main() {
 
-	pcfg := &processor.Config{
-		Name:               "vectors",
-		Debug:              true,
-		MaxWaitForResponse: 2,
-		Core:               "",
-		Net: struct {
-			Host string "yaml:\"host\""
-			Port int    "yaml:\"port\""
-		}{Host: "localhost", Port: 5023},
-		StandaloneMode: true,
+	if len(os.Args) != 2 {
+		panic("need to pass a yaml config path as the first parameter")
 	}
 
-	processor, err := processor.New(pcfg)
+	cfg := &processor.Config{}
+	processor.ConfigFromYAML(cfg, os.Args[1])
+
+	fmt.Println(cfg)
+
+	processor, err := processor.New(cfg)
 	if err != nil {
 		panic(err)
 	}
 
 	mod := processor.Module("common")
+	mod.Version = 1.0
 
-	v := clusters.VectorCluster{}
-	ccfg := &cluster.Config{
-		Identifier:                  "vec",
-		OnLoad:                      cluster.CompleteAndPush,
-		OnCrash:                     cluster.DoNothing,
-		StartWithNTransformClusters: 1,
-		StartWithNLoadClusters:      1,
-		ETChannelThreshold:          1,
-		ETChannelGrowthFactor:       2,
-		TLChannelThreshold:          1,
-		TLChannelGrowthFactor:       2,
-	}
-	mod.AddCluster("vec", cluster.Batch, v, ccfg)
+	vcfg := cluster.GenericConfig("vec")
+	mod.AddCluster("vec", cluster.Batch, &clusters.V, vcfg)
 
-	k := clusters.KeyCluster{}
-	kcfg := &cluster.Config{
-		Identifier:                  "key",
-		OnLoad:                      cluster.CompleteAndPush,
-		OnCrash:                     cluster.DoNothing,
-		StartWithNTransformClusters: 1,
-		StartWithNLoadClusters:      1,
-		ETChannelThreshold:          1,
-		ETChannelGrowthFactor:       2,
-		TLChannelThreshold:          1,
-		TLChannelGrowthFactor:       2,
-	}
-	mod.AddCluster("key", cluster.Batch, &k, kcfg)
+	kcfg := cluster.GenericConfig("key")
+	mod.AddCluster("key", cluster.Batch, &clusters.K, kcfg)
 
 	processor.Run()
 }

@@ -3,8 +3,7 @@ package clusters
 import (
 	"fmt"
 
-	"github.com/GabeCordo/keitt/processor/components/channel"
-	"github.com/GabeCordo/keitt/processor/components/cluster"
+	"github.com/GabeCordo/processor-framework/processor/components/cluster"
 )
 
 var V = VectorCluster{}
@@ -17,11 +16,11 @@ type Vec2D struct {
 type VectorCluster struct {
 }
 
-func (cluster VectorCluster) ExtractFunc(h cluster.H, m cluster.M, c channel.OneWay) {
+func (cluster VectorCluster) ExtractFunc(h cluster.H, m cluster.M, out cluster.Out) {
 
 	v := Vec2D{1, 5} // simulate pulling data from a source
 	for i := 0; i < 100; i++ {
-		c.Push(v) // send data to the TransformFunc
+		out.Push(v) // send data to the TransformFunc
 	}
 }
 

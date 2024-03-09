@@ -3,8 +3,7 @@ package clusters
 import (
 	"fmt"
 
-	"github.com/GabeCordo/keitt/processor/components/channel"
-	"github.com/GabeCordo/keitt/processor/components/cluster"
+	"github.com/GabeCordo/processor-framework/processor/components/cluster"
 )
 
 var K = KeyCluster{}
@@ -12,9 +11,9 @@ var K = KeyCluster{}
 type KeyCluster struct {
 }
 
-func (cluster *KeyCluster) ExtractFunc(h cluster.H, m cluster.M, c channel.OneWay) {
+func (cluster *KeyCluster) ExtractFunc(h cluster.H, m cluster.M, out cluster.Out) {
 	msg := m.GetKey("message")
-	c.Push(msg)
+	out.Push(msg)
 }
 
 func (cluster *KeyCluster) TransformFunc(h cluster.H, m cluster.M, in any) (out any, success bool) {
